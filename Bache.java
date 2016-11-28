@@ -10,10 +10,12 @@ public class Bache extends Chargement {
 
     public Bache (int charge, String immatriculation) throws Throwable {
 
-        if (charge > Citerne.charge_max)
+        if (charge > Bache.charge_max)
             throw new Throwable("Charge trop lourde");
+        if (charge < 0)
+            throw new Throwable("Illegal value for charge");
         this.charge = charge;
-        this.immatriculation = immatriculation;
+        this.setImmatriculation(immatriculation);
     }
 
     public int getVitesse_max() {

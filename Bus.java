@@ -5,7 +5,7 @@ package a;
  */
 public class Bus extends Vehicule {
 
-    public static final int poids_vide = 4000;
+    private static final int poids_vide = 4000;
 
     public int getVitesse_max() {
         return 150;

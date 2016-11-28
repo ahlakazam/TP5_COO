@@ -5,7 +5,7 @@ package a;
  */
 public class Citerne extends Chargement {
 
-    public static final int charge_max = 10000;
+    private static final int charge_max = 10000;
     public static final int poids_vide = 3000;
 
     public Citerne () {
@@ -15,8 +15,10 @@ public class Citerne extends Chargement {
     public Citerne (int charge, String immatriculation) throws Throwable {
         if (charge > Citerne.charge_max)
             throw new Throwable("Charge trop lourde");
+        if (charge < 0)
+            throw new Throwable("Illegal value for charge");
         this.charge = charge;
-        this.immatriculation = immatriculation;
+        this.setImmatriculation(immatriculation);
     }
 
     public int getVitesse_max() {
